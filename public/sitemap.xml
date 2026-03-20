@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.grappi.cl/</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/"/>
+  </url>
+  <url>
+    <loc>https://www.grappi.cl/videos-corporativos</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/videos-corporativos"/>
+  </url>
+  <url>
+    <loc>https://www.grappi.cl/videos-animados</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/videos-animados"/>
+  </url>
+  <url>
+    <loc>https://www.grappi.cl/videos</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/videos"/>
+  </url>
+  <url>
+    <loc>https://www.grappi.cl/clientes</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/clientes"/>
+  </url>
+  <url>
+    <loc>https://www.grappi.cl/contacto</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/contacto"/>
+  </url>
+</urlset>

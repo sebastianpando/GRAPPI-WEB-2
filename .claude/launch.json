@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "grappi-dev",
+      "runtimeExecutable": "/Users/sebastian/Desktop/GRAPPI WEB 2/.claude/start-dev.sh",
+      "runtimeArgs": [],
+      "port": 5173,
+      "autoPort": true
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+  Esta plantilla ha sido optimizada para SEO y rendimiento.  Se añadieron metadatos
+  descriptivos, enlaces rel=preconnect y JSON-LD para mejorar la visibilidad
+  en motores de búsqueda.  Además, se configuró un favicon personalizado y se
+  define el idioma como español chileno.
+-->
+<html lang="es-CL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+
+    <!-- Icono del sitio -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+
+    <!-- Preconexiones para mejorar la velocidad de carga de recursos externos -->
+    <link rel="preconnect" href="https://player.vimeo.com" />
+    <link rel="preconnect" href="https://i.vimeocdn.com" />
+    <link rel="preconnect" href="https://vumbnail.com" />
+    <script type="module" crossorigin src="/assets/index-DSCO2QmR.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DyJNYGQ7.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- Hidden static forms for Netlify Forms detection.  Netlify parses static HTML at build time to
+         detect form definitions.  Because forms are rendered dynamically via React,
+         we mirror their fields here in hidden forms so that Netlify knows about them and will
+         create corresponding backend endpoints.  These forms will never be visible to users. -->
+    
+    <!-- Home Contact Form -->
+    <form hidden method='post' name='home-contact'>
+      <input type="hidden" name="form-name" value="home-contact" />
+      <input type="text" name="nombre" />
+      <input type="text" name="apellido" />
+      <input type="email" name="email" />
+      <input type="text" name="empresa" />
+      <textarea name="mensaje"></textarea>
+    </form>
+
+    <!-- Contacto Page Form -->
+    <form hidden method='post' name='contacto'>
+      <input type="hidden" name="form-name" value="contacto" />
+      <input type="text" name="nombre" />
+      <input type="text" name="apellido" />
+      <input type="email" name="email" />
+      <input type="text" name="empresa" />
+      <textarea name="mensaje"></textarea>
+    </form>
+
+    <!-- Videos Corporativos Form -->
+    <form hidden method='post' name='videos-corporativos'>
+      <input type="hidden" name="form-name" value="videos-corporativos" />
+      <input type="text" name="nombre" />
+      <input type="text" name="apellido" />
+      <input type="email" name="email" />
+      <input type="text" name="empresa" />
+      <textarea name="mensaje"></textarea>
+    </form>
+    <script
+      defer
+      src="%VITE_ANALYTICS_ENDPOINT%/umami"
+      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"
+    ></script>
+  </body>
+</html>
