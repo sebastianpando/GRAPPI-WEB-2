@@ -8,10 +8,6 @@
   [build.processing.html]
     pretty_urls = true
 
-# Prerender for bots (Googlebot, Bingbot, etc.)
-[[plugins]]
-  package = "@netlify/plugin-prerender"
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
