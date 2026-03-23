@@ -8,7 +8,7 @@ import { VideoEmbed, VideoModal } from '../components/VideoEmbed'
 import ContactForm from '../components/ContactForm'
 import FAQItem from '../components/FAQItem'
 import SchemaOrg from '../components/SchemaOrg'
-import { organizationSchema, localBusinessSchema, webSiteSchema, faqSchema } from '../lib/schemas'
+import { organizationSchema, localBusinessSchema, webSiteSchema, faqSchema, videoObjectSchema } from '../lib/schemas'
 
 // Featured portfolio videos shown on home page
 const FEATURED_VIDEOS = [
@@ -72,7 +72,7 @@ const FAQS = [
   },
   {
     question: '¿Cuánto tarda una producción audiovisual?',
-    answer: 'El tiempo de producción depende del tipo de video. Un video corporativo puede tomar entre 2-4 semanas desde la primera reunión hasta la entrega final, considerando guion, grabación y edición.',
+    answer: 'El tiempo de producción depende del tipo de video. Cada proyecto tiene un calendario personalizado que definimos juntos desde la primera reunión, considerando guion, grabación y edición.',
   },
   {
     question: '¿Trabajan con empresas de otras regiones o países?',
@@ -88,7 +88,7 @@ const FAQS = [
   },
   {
     question: '¿Qué diferencia a Grappi de otras productoras?',
-    answer: 'Combinamos experiencia técnica con visión estratégica. No solo grabamos videos: creamos piezas que comunican, generan confianza y ayudan a alcanzar objetivos de negocio. Con más de 13 años y 500+ proyectos, sabemos qué funciona.',
+    answer: 'Combinamos experiencia técnica con visión estratégica. No solo grabamos videos: creamos piezas que comunican, generan confianza y ayudan a alcanzar objetivos de negocio. Con amplia trayectoria y cientos de proyectos entregados, sabemos qué funciona.',
   },
 ]
 
@@ -115,7 +115,7 @@ export default function Home() {
         <meta name="twitter:image" content="https://www.grappi.cl/hero-home-new.png" />
       </Helmet>
 
-      <SchemaOrg schema={[organizationSchema, localBusinessSchema, webSiteSchema, faqSchema(FAQS)]} />
+      <SchemaOrg schema={[organizationSchema, localBusinessSchema, webSiteSchema, faqSchema(FAQS), ...videoObjectSchema(FEATURED_VIDEOS.slice(0, 4))]} />
 
       <Header />
 
@@ -143,7 +143,7 @@ export default function Home() {
               Creamos videos corporativos, videos animados 2D/3D y publicidad audiovisual para empresas en Santiago. Desde el guion hasta la post producción, entregamos piezas audiovisuales listas para web, redes sociales y campañas digitales.
             </p>
             <a
-              href="https://tidycal.com/grappi/"
+              href="https://tidycal.com/grappi/reunion"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 text-base shadow-lg shadow-orange-500/30"
@@ -245,7 +245,7 @@ export default function Home() {
             <img
               src="/banner-marcas.png"
               alt="Nuestros Clientes Corporativos"
-              className="w-full max-w-5xl mx-auto object-contain"
+              className="w-full max-w-5xl mx-auto object-contain rounded-2xl"
               loading="lazy"
             />
           </div>
@@ -297,7 +297,7 @@ export default function Home() {
 
         {/* FAQ */}
         <section className="section-dark py-20">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <div className="section-badge mb-4">
                 <span>💬</span>
@@ -310,7 +310,7 @@ export default function Home() {
                 Aquí respondemos las preguntas más comunes sobre nuestros servicios.
               </p>
             </div>
-            <div className="space-y-3 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-10">
               {FAQS.map(faq => (
                 <FAQItem key={faq.question} question={faq.question} answer={faq.answer} dark />
               ))}
@@ -321,7 +321,7 @@ export default function Home() {
                 Agenda una reunión con nosotros y resolvemos todas tus dudas.
               </p>
               <a
-                href="https://tidycal.com/grappi/"
+                href="https://tidycal.com/grappi/reunion"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
@@ -389,7 +389,7 @@ export default function Home() {
                   </div>
                 </a>
                 <a
-                  href="https://tidycal.com/grappi/"
+                  href="https://tidycal.com/grappi/reunion"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="card-dark block hover:border-orange-500/40 transition-all duration-200"
@@ -418,21 +418,35 @@ export default function Home() {
         </section>
       </main>
 
-      {/* SEO Keywords Section */}
-      <section className="section-dark py-10 border-t border-white/5">
+      {/* SEO Content Section */}
+      <section className="section-dark py-12 border-t border-white/5">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-base font-bold text-white mb-3">
+          <h2 className="text-lg font-bold text-white mb-4">
             Productora Audiovisual en Santiago, Chile
           </h2>
-          <p className="text-white/40 text-sm leading-relaxed">
-            Grappi Multimedia es una productora audiovisual con más de 13 años de experiencia en Santiago de Chile.
-            Somos especialistas en video corporativo, videos institucionales, videos animados 2D y 3D, motion graphics
-            y publicidad audiovisual para empresas. Trabajamos con las principales empresas de Chile en sectores como
-            minería, energía, retail, tecnología, salud y educación. Nuestro estudio de producción está ubicado en
-            Vitacura, Santiago, y atendemos proyectos en todo Chile y Latinoamérica. Si buscas una productora de
-            video corporativo en Santiago, una empresa de animación 2D/3D en Chile, o expertos en motion graphics y
-            contenido audiovisual para empresas, Grappi es tu partner ideal.
-          </p>
+          <div className="text-white/40 text-sm leading-relaxed space-y-3">
+            <p>
+              <strong className="text-white/50">Grappi Multimedia</strong> es una productora audiovisual con más de 13 años de experiencia en Santiago de Chile.
+              Somos especialistas en <strong className="text-white/50">video corporativo</strong>, videos institucionales, <strong className="text-white/50">videos animados 2D y 3D</strong>, motion graphics
+              y publicidad audiovisual para empresas. Trabajamos con las principales empresas de Chile en sectores como
+              minería, energía, retail, tecnología, salud y educación.
+            </p>
+            <p>
+              Nuestro estudio de <strong className="text-white/50">producción audiovisual</strong> está ubicado en Vitacura, Santiago, y atendemos proyectos en todo Chile y Latinoamérica.
+              Si buscas una <strong className="text-white/50">productora de video corporativo en Santiago</strong>, una empresa de animación 2D/3D en Chile, o expertos en motion graphics y
+              contenido audiovisual para empresas, Grappi es tu partner ideal.
+            </p>
+            <p>
+              Ofrecemos servicios de <strong className="text-white/50">video corporativo en Santiago</strong>, producción de videos institucionales, videos testimoniales, videos de productos,
+              videos de capacitación, cobertura de eventos corporativos y <strong className="text-white/50">videos animados para empresas</strong>. Cada producción incluye guion estratégico,
+              grabación con equipos 4K, edición profesional, color grading y entrega en múltiples formatos optimizados para web, redes sociales y campañas digitales.
+            </p>
+            <p>
+              Entre nuestros clientes se encuentran empresas como CONMEBOL, Porsche, Sony, Abastible, Banco Estado, Huawei, Mitsubishi, MEGA, Inacap,
+              Universidad de Chile, Universidad Adolfo Ibáñez, Bureau Veritas, Liberty Seguros, Pedidos Ya, ME Elecmetal y más de 200 empresas líderes
+              que confían en nuestra <strong className="text-white/50">productora audiovisual en Chile</strong>.
+            </p>
+          </div>
         </div>
       </section>
 

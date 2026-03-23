@@ -2,6 +2,16 @@
   command = "npm install && npm run build"
   publish = "dist"
 
+# Netlify prerendering — serves static HTML snapshots to search engine bots
+# This is CRITICAL for React SPA SEO. Googlebot gets fully rendered HTML.
+[build.processing]
+  [build.processing.html]
+    pretty_urls = true
+
+# Prerender for bots (Googlebot, Bingbot, etc.)
+[[plugins]]
+  package = "@netlify/plugin-prerender"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -15,8 +25,22 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    # Tell Google this content is fresh
+    X-Robots-Tag = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
 
 [[headers]]
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=86400"

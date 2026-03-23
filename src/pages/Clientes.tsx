@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useNavigation } from '../hooks/useNavigation'
 import SchemaOrg from '../components/SchemaOrg'
-import { breadcrumbSchema } from '../lib/schemas'
+import { breadcrumbSchema, reviewSchema } from '../lib/schemas'
 
 const STATS = [
   { num: '13+', label: 'Años de experiencia' },
@@ -252,18 +252,7 @@ export default function Clientes() {
       </Helmet>
 
       <SchemaOrg schema={[
-        {
-          '@context': 'https://schema.org',
-          '@type': 'Organization',
-          'name': 'Grappi Multimedia',
-          'url': 'https://www.grappi.cl',
-          'aggregateRating': {
-            '@type': 'AggregateRating',
-            'ratingValue': '5.0',
-            'reviewCount': '200',
-            'bestRating': '5',
-          },
-        },
+        reviewSchema(TESTIMONIALS),
         breadcrumbSchema({ name: 'Clientes', path: '/clientes' }),
       ]} />
 

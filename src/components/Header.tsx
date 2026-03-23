@@ -6,7 +6,7 @@ const navLinks = [
   { label: 'Inicio', href: '/' },
   { label: 'Videos Corporativos', href: '/videos-corporativos' },
   { label: 'Videos Animados', href: '/videos-animados' },
-  { label: 'Videos', href: '/videos' },
+  { label: 'Portafolio', href: '/videos' },
   { label: 'Clientes', href: '/clientes' },
   { label: 'Contacto', href: '/contacto' },
 ]
@@ -24,7 +24,7 @@ export default function Header() {
             <img
               src="/logograppipagina.avif"
               alt="Grappi Logo"
-              className="h-8 w-auto"
+              className="h-10 w-auto"
               loading="eager"
             />
           </Link>
@@ -48,7 +48,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <a
-            href="https://tidycal.com/grappi/"
+            href="https://tidycal.com/grappi/reunion"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden lg:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-200"
@@ -88,7 +88,7 @@ export default function Header() {
             ))}
             <div className="pt-2">
               <a
-                href="https://tidycal.com/grappi/"
+                href="https://tidycal.com/grappi/reunion"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-3 rounded-full transition-all duration-200 justify-center"

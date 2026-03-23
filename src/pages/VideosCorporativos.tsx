@@ -65,9 +65,9 @@ const METHODOLOGY = [
 ]
 
 const FAQS = [
-  { question: '¿Cuánto tiempo toma producir un video corporativo?', answer: 'El tiempo varía según la complejidad. Un video corporativo estándar toma entre 2 y 4 semanas desde la primera reunión hasta la entrega final, incluyendo guion, producción y edición.' },
+  { question: '¿Cuánto tiempo toma producir un video corporativo?', answer: 'El tiempo varía según la complejidad. Cada proyecto tiene un calendario personalizado que definimos juntos desde la primera reunión, incluyendo guion, producción y edición.' },
   { question: '¿Qué necesito para empezar mi video corporativo?', answer: 'Solo necesitas una idea de lo que quieres comunicar. Nosotros nos encargamos del guion, la producción y la postproducción. Una reunión inicial es suficiente para comenzar.' },
-  { question: '¿Qué equipos técnicos se utilizan en la producción?', answer: 'Utilizamos cámaras 4K de última generación, iluminación cinematográfica LED, audio de alta fidelidad, drones y equipos de estabilización para garantizar la máxima calidad.' },
+  { question: '¿Qué equipos técnicos se utilizan en la producción?', answer: 'Utilizamos cámaras de última generación, iluminación cinematográfica profesional, audio de alta fidelidad, drones y equipos de estabilización para garantizar la máxima calidad.' },
   { question: '¿Cómo se mide el éxito de un video corporativo?', answer: 'Medimos el éxito según los objetivos definidos: visualizaciones, tasa de engagement, conversiones, tiempo de permanencia en sitio web, y alcance en redes sociales.' },
   { question: '¿Qué formatos de entrega ofrecen?', answer: 'Entregamos en todos los formatos necesarios: MP4 en alta resolución, formatos optimizados para web, redes sociales (Instagram, LinkedIn, YouTube), y versiones adaptadas para diferentes plataformas.' },
   { question: '¿Ofrecen servicios de marketing para los videos?', answer: 'Sí, ofrecemos asesoría sobre distribución y estrategia digital. Podemos orientarte sobre las mejores plataformas y formatos para maximizar el impacto de tu video.' },
@@ -122,7 +122,7 @@ export default function VideosCorporativos() {
               Comunicamos la esencia de tu marca a través de videos corporativos profesionales que generan confianza y ayudan a vender mejor sin sonar a "venta dura"
             </p>
             <a
-              href="https://tidycal.com/grappi/"
+              href="https://tidycal.com/grappi/reunion"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-orange-500/30"
@@ -177,35 +177,37 @@ export default function VideosCorporativos() {
         {/* Methodology */}
         <section className="section-light py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-4">
               Nuestra metodología
             </h2>
-            {/* Step numbers row */}
-            <div className="hidden md:flex items-start justify-between mb-6 relative">
-              <div className="absolute top-5 left-8 right-8 h-px bg-orange-200" />
-              {METHODOLOGY.map(step => (
-                <div key={step.num} className="flex flex-col items-center gap-2 flex-1 relative">
-                  <div className="w-10 h-10 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center z-10 text-sm">
-                    {step.num}
+            <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
+              Un proceso claro y colaborativo para garantizar resultados excepcionales en cada proyecto.
+            </p>
+            <div className="relative">
+              {/* Vertical line connector */}
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-orange-200 -translate-x-1/2" />
+              <div className="space-y-8 md:space-y-0">
+                {METHODOLOGY.map((step, i) => (
+                  <div key={step.num} className={`relative md:flex items-center gap-8 md:mb-12 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                    {/* Content card */}
+                    <div className={`md:w-[calc(50%-2rem)] ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:border-orange-200 transition-all duration-300 group">
+                        <div className={`flex items-center gap-3 mb-2 ${i % 2 === 0 ? 'md:justify-end' : ''}`}>
+                          <span className="md:hidden w-8 h-8 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center text-sm flex-shrink-0">{step.num}</span>
+                          <h3 className="text-gray-900 font-bold text-lg group-hover:text-orange-500 transition-colors">{step.title}</h3>
+                        </div>
+                        <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+                      </div>
+                    </div>
+                    {/* Center circle */}
+                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-orange-500 text-white font-bold items-center justify-center z-10 text-base shadow-lg shadow-orange-500/30 ring-4 ring-white">
+                      {step.num}
+                    </div>
+                    {/* Spacer for the other side */}
+                    <div className="hidden md:block md:w-[calc(50%-2rem)]" />
                   </div>
-                  <span className="text-gray-900 font-semibold text-xs text-center">{step.title}</span>
-                  <span className="text-gray-500 text-xs text-center">{step.short}</span>
-                </div>
-              ))}
-            </div>
-            {/* Full descriptions */}
-            <div className="space-y-4">
-              {METHODOLOGY.map(step => (
-                <div key={step.num} className="flex gap-4 card-light">
-                  <div className="w-10 h-10 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">
-                    {step.num}
-                  </div>
-                  <div>
-                    <h3 className="text-gray-900 font-bold mb-1">{step.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -225,7 +227,7 @@ export default function VideosCorporativos() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://tidycal.com/grappi/"
+                href="https://tidycal.com/grappi/reunion"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-200"
@@ -245,11 +247,11 @@ export default function VideosCorporativos() {
 
         {/* FAQs */}
         <section className="section-dark py-20">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8">
               Preguntas frecuentes sobre Videos Corporativos
             </h2>
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {FAQS.map(faq => (
                 <FAQItem key={faq.question} question={faq.question} answer={faq.answer} dark />
               ))}
@@ -257,15 +259,50 @@ export default function VideosCorporativos() {
           </div>
         </section>
 
-        {/* Contact Form */}
-        <section className="section-light py-16">
-          <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ContactForm
-              formName="videos-corporativos"
-              title="Cotiza Video Corporativo"
-              subtitle="Completa el formulario y nos pondremos en contacto contigo lo antes posible"
-              dark={false}
-            />
+        {/* Contact Form + CTA */}
+        <section className="section-light py-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div className="max-w-lg">
+                <ContactForm
+                  formName="videos-corporativos"
+                  title="Cotiza tu Video Corporativo"
+                  subtitle="Completa el formulario y te enviaremos una propuesta personalizada sin costo"
+                  dark={false}
+                />
+              </div>
+              <div className="flex flex-col gap-6 lg:pt-4">
+                <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 text-white text-center shadow-lg shadow-orange-500/20">
+                  <CalendarDays size={36} className="mx-auto mb-4 opacity-90" />
+                  <h3 className="text-xl font-bold mb-2">¿Prefieres conversar directamente?</h3>
+                  <p className="text-white/85 text-sm mb-6 leading-relaxed">
+                    Agenda una reunión gratuita de 30 minutos con nuestro equipo y resolvemos todas tus dudas sobre tu proyecto.
+                  </p>
+                  <a
+                    href="https://tidycal.com/grappi/reunion"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white text-orange-600 font-bold px-6 py-3 rounded-full hover:bg-orange-50 transition-all duration-200"
+                  >
+                    Agendar Reunión Gratis <ArrowRight size={16} />
+                  </a>
+                </div>
+                <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                  <div className="flex items-center gap-3 mb-3">
+                    <CheckCircle size={20} className="text-green-500" />
+                    <span className="text-gray-900 font-semibold text-sm">Respuesta en menos de 24 hrs</span>
+                  </div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <CheckCircle size={20} className="text-green-500" />
+                    <span className="text-gray-900 font-semibold text-sm">Cotización sin compromiso</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle size={20} className="text-green-500" />
+                    <span className="text-gray-900 font-semibold text-sm">+500 proyectos entregados</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

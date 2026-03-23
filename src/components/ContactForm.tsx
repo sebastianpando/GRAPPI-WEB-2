@@ -31,6 +31,9 @@ export default function ContactForm({
         body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
       })
       setSubmitted(true)
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', { send_to: 'AW-948312613/omifCKi0_egYEKW0mMQD' })
+      }
     } catch {
       // Still show success to not confuse user in dev mode
       setSubmitted(true)

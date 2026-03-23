@@ -31,7 +31,7 @@
   }
 
   .hero-overlay {
-    @apply absolute inset-0 bg-[#080c18]/65;
+    @apply absolute inset-0 bg-black/60;
   }
 
   .section-badge {

@@ -32,7 +32,7 @@ const STYLES = [
 
 // Vimeo IDs from the live site
 const ANIMATED_VIDEOS = [
-  '1012538802', '925115920', '637665967', '624596291', '830575842', '412192873',
+  '1176325486', '1164807811', '1012538802', '925115920', '637665967', '624596291', '830575842', '412192873',
   '903125221', '541682464', '345701250', '903124976', '463032643', '578573014',
   '637665933', '178088997', '578619318', '928094842', '901143053', '829520631',
   '314018532', '369557342', '925115889', '546622524', '874138406', '534607769',
@@ -40,12 +40,12 @@ const ANIMATED_VIDEOS = [
 ]
 
 const FAQS = [
-  { question: '¿Cuánto tiempo toma producir un video animado?', answer: 'Depende de la complejidad y duración. Un video animado de 1-2 minutos puede tomar entre 3 y 6 semanas, incluyendo guion, storyboard, diseño, animación y postproducción.' },
+  { question: '¿Cuánto tiempo toma producir un video animado?', answer: 'Depende de la complejidad y duración del proyecto. El plazo lo definimos juntos en la primera reunión, considerando guion, storyboard, diseño, animación y postproducción.' },
   { question: '¿Qué información necesito para empezar mi proyecto?', answer: 'Necesitamos entender tu objetivo, audiencia, mensaje principal y referencias visuales que te gusten. Con eso, desarrollamos el concepto completo.' },
   { question: '¿Pueden animar mi logo o marca existente?', answer: 'Absolutamente. Trabajamos con tu identidad de marca existente para crear animaciones coherentes con tu imagen corporativa.' },
-  { question: '¿Qué ventajas ofrece la animación 3D frente a la 2D?', answer: 'La animación 3D ofrece mayor realismo y profundidad, ideal para productos, arquitectura o procesos industriales. La 2D es más económica y perfecta para explicar conceptos o construir personajes de marca.' },
+  { question: '¿Qué ventajas ofrece la animación 3D frente a la 2D?', answer: 'La animación 3D ofrece mayor realismo y profundidad, ideal para productos, arquitectura o procesos industriales. La 2D es perfecta para explicar conceptos o construir personajes de marca.' },
   { question: '¿Cómo integran la animación en videos reales?', answer: 'Usamos técnicas de composición y efectos visuales (VFX) para combinar elementos animados con footage real, creando un resultado cohesionado y profesional.' },
-  { question: '¿Cuánto demoran en hacer un video con IA?', answer: 'Un video corto con IA (15-30 segundos) puede estar listo en 1-2 semanas. Para videos más largos o complejos, el tiempo varía según los requerimientos específicos.' },
+  { question: '¿Cuánto demoran en hacer un video con IA?', answer: 'El tiempo depende de la duración y complejidad del proyecto. Cada video con IA tiene un calendario personalizado que definimos según tus requerimientos específicos.' },
   { question: '¿Cómo hacen los videos con IA?', answer: 'Combinamos herramientas de IA generativa con supervisión humana creativa. Generamos los assets visuales con IA y los integramos con animación, audio y dirección de arte profesional.' },
   { question: '¿En un video IA podemos poner lo que sea?', answer: 'Trabajamos dentro de los límites éticos y legales. Podemos crear prácticamente cualquier concepto visual que sea apropiado, pero evitamos contenido que viole derechos de imagen o sea inapropiado.' },
 ]
@@ -108,51 +108,20 @@ export default function VideosAnimados() {
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="section-light py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-10">
-              ¿Por qué elegir videos animados?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {BENEFITS.map(b => (
-                <article key={b.title} className="card-light">
-                  <h3 className="text-gray-900 font-bold text-lg mb-2">{b.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-3">{b.desc}</p>
-                  <span className="text-violet-600 font-semibold text-sm">{b.stat}</span>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Process */}
+        {/* Video Gallery */}
         <section className="section-dark py-20">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-12">
-              Nuestro proceso de animación
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-10">
+              Nuestros Videos Animados
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
-              {PROCESS.map(step => (
-                <article key={step.num} className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-violet-600 text-white font-bold flex items-center justify-center mx-auto mb-3 text-lg">
-                    {step.num}
-                  </div>
-                  <h3 className="text-white font-semibold text-sm mb-1">{step.title}</h3>
-                  <p className="text-white/50 text-xs">{step.short}</p>
-                </article>
-              ))}
-            </div>
-            <div className="space-y-3">
-              {PROCESS.map(step => (
-                <article key={step.num} className="card-dark flex gap-4 items-start">
-                  <div className="w-9 h-9 rounded-full bg-violet-600 text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">
-                    {step.num}
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold mb-1">{step.title}</h3>
-                    <p className="text-white/60 text-sm leading-relaxed">{step.desc}</p>
-                  </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {ANIMATED_VIDEOS.map(id => (
+                <article key={id}>
+                  <VideoEmbed
+                    vimeoId={id}
+                    title={`Video animado ${id}`}
+                    onPlay={() => setActiveVideo({ id, title: `Video animado ${id}` })}
+                  />
                 </article>
               ))}
             </div>
@@ -180,7 +149,7 @@ export default function VideosAnimados() {
                 </p>
                 <div className="space-y-4 mb-6">
                   {[
-                    { title: 'Mayor Eficiencia', desc: 'Procesos optimizados que reducen tiempos de producción hasta un 60%' },
+                    { title: 'Mayor Eficiencia', desc: 'Procesos optimizados que reducen tiempos de producción significativamente' },
                     { title: 'Creatividad Sin Límites', desc: 'Generación de conceptos, personajes y escenarios únicos al instante' },
                     { title: 'Costos Competitivos', desc: 'Alta calidad profesional a precios más accesibles que la animación tradicional' },
                   ].map(item => (
@@ -200,11 +169,70 @@ export default function VideosAnimados() {
                   Solicitar Animación con IA <ArrowRight size={16} />
                 </button>
               </div>
-              <div className="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-violet-900 to-slate-900 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Sparkles size={48} className="text-violet-400 mx-auto mb-3" />
-                  <p className="text-white/70 text-sm">Video de Animación con IA</p>
-                </div>
+              <div className="space-y-4">
+                <VideoEmbed
+                  vimeoId="1174087216"
+                  title="Animación con IA — Demo 1"
+                  onPlay={() => setActiveVideo({ id: '1174087216', title: 'Animación con IA — Demo 1' })}
+                />
+                <VideoEmbed
+                  vimeoId="1149028875"
+                  title="Animación con IA — Demo 2"
+                  onPlay={() => setActiveVideo({ id: '1149028875', title: 'Animación con IA — Demo 2' })}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits */}
+        <section className="section-light py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-10">
+              ¿Por qué elegir videos animados?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {BENEFITS.map(b => (
+                <article key={b.title} className="card-light">
+                  <h3 className="text-gray-900 font-bold text-lg mb-2">{b.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">{b.desc}</p>
+                  <span className="text-violet-600 font-semibold text-sm">{b.stat}</span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Process */}
+        <section className="section-dark py-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-4">
+              Nuestro proceso de animación
+            </h2>
+            <p className="text-white/50 text-center mb-12 max-w-2xl mx-auto">
+              Un flujo creativo diseñado para transformar tu idea en una animación profesional, paso a paso.
+            </p>
+            <div className="relative">
+              {/* Horizontal connector line (desktop) */}
+              <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-violet-600/0 via-violet-500 to-violet-600/0" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                {PROCESS.map((step, i) => (
+                  <article key={step.num} className="group relative">
+                    {/* Step circle */}
+                    <div className="relative z-10 w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-500 to-violet-700 text-white font-bold flex items-center justify-center mx-auto mb-4 text-2xl shadow-lg shadow-violet-500/30 group-hover:scale-110 group-hover:shadow-violet-500/50 transition-all duration-300">
+                      {step.num}
+                    </div>
+                    {/* Mobile connector */}
+                    {i < PROCESS.length - 1 && (
+                      <div className="lg:hidden absolute left-1/2 -translate-x-1/2 top-20 w-0.5 h-6 bg-violet-500/30" />
+                    )}
+                    {/* Content */}
+                    <div className="text-center bg-white/5 border border-white/10 rounded-2xl p-5 group-hover:bg-white/10 group-hover:border-violet-500/30 transition-all duration-300">
+                      <h3 className="text-white font-bold text-sm mb-2 group-hover:text-violet-300 transition-colors">{step.title}</h3>
+                      <p className="text-white/50 text-xs leading-relaxed">{step.desc}</p>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
@@ -228,51 +256,13 @@ export default function VideosAnimados() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="section-light py-16">
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-              Anima tus ideas y captura atención
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Transforma conceptos complejos en animaciones memorables que conectan con tu audiencia y generan resultados reales.
-            </p>
-            <button
-              onClick={() => navigate('/videos-corporativos')}
-              className="inline-flex items-center gap-2 border-2 border-gray-300 hover:border-orange-500 text-gray-700 hover:text-orange-500 font-semibold px-6 py-3 rounded-full transition-all duration-200"
-            >
-              Ver Otros Servicios
-            </button>
-          </div>
-        </section>
-
-        {/* Video Gallery */}
-        <section className="section-dark py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-10">
-              Nuestros Videos Animados
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {ANIMATED_VIDEOS.map(id => (
-                <article key={id}>
-                  <VideoEmbed
-                    vimeoId={id}
-                    title={`Video animado ${id}`}
-                    onPlay={() => setActiveVideo({ id, title: `Video animado ${id}` })}
-                  />
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FAQs */}
         <section className="section-light py-20">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8">
               Preguntas frecuentes sobre videos animados
             </h2>
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {FAQS.map(faq => (
                 <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
               ))}

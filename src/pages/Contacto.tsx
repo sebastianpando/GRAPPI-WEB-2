@@ -5,28 +5,19 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ContactForm from '../components/ContactForm'
 import FAQItem from '../components/FAQItem'
-import { useNavigation } from '../hooks/useNavigation'
 import SchemaOrg from '../components/SchemaOrg'
 import { breadcrumbSchema, faqSchema } from '../lib/schemas'
 
 const FAQS = [
-  { question: '¿Cuánto cuesta un video corporativo?', answer: 'El precio varía según la duración, complejidad y tipo de producción. Un video corporativo básico parte desde $500.000 CLP. Contáctanos y te enviamos una propuesta personalizada sin costo.' },
-  { question: '¿Cuánto tiempo demora la producción de un video?', answer: 'El tiempo depende del tipo y complejidad del proyecto. Un video corporativo de 1-2 minutos toma entre 2 a 4 semanas desde el brief hasta la entrega final, incluyendo revisiones.' },
-  { question: '¿Trabajan con empresas fuera de Santiago?', answer: 'Sí, trabajamos con empresas en todo Chile y también a nivel latinoamericano. Tenemos experiencia en filmaciones en regiones como Antofagasta, Concepción, Puerto Montt y más.' },
-  { question: '¿Cuántas revisiones incluyen en el proyecto?', answer: 'Incluimos hasta 2 rondas de revisiones en todos nuestros proyectos. Esto cubre ajustes de texto, color, música y otros elementos dentro del alcance original del proyecto.' },
+  { question: '¿Cuánto cuesta un video corporativo?', answer: 'El precio varía según la duración, complejidad y tipo de producción. Contáctanos y te enviamos una propuesta personalizada sin costo ni compromiso.' },
+  { question: '¿Cuánto tiempo demora la producción de un video?', answer: 'El tiempo depende del tipo y complejidad del proyecto. Cada producción tiene un calendario personalizado que definimos juntos desde la primera reunión, incluyendo revisiones.' },
+  { question: '¿Trabajan con empresas fuera de Santiago?', answer: 'Sí, trabajamos con empresas en todo Chile y también a nivel latinoamericano. Tenemos experiencia en filmaciones en diversas regiones del país y el extranjero.' },
+  { question: '¿Cuántas revisiones incluyen en el proyecto?', answer: 'Incluimos rondas de revisiones en todos nuestros proyectos. Esto cubre ajustes de texto, color, música y otros elementos dentro del alcance original del proyecto.' },
   { question: '¿Pueden hacer videos en otros idiomas?', answer: 'Sí, trabajamos con locutores y traductores profesionales para producir videos en inglés, portugués y otros idiomas según tus necesidades de mercado.' },
-  { question: '¿En qué formatos entregan el video final?', answer: 'Entregamos en todos los formatos necesarios: MP4 en alta calidad para web y redes sociales, versiones adaptadas para distintas plataformas (Instagram, LinkedIn, YouTube) y el archivo fuente si se requiere.' },
-]
-
-const SERVICES = [
-  { label: 'Videos Corporativos', path: '/videos-corporativos' },
-  { label: 'Videos Animados', path: '/videos-animados' },
-  { label: 'Portafolio', path: '/videos' },
+  { question: '¿En qué formatos entregan el video final?', answer: 'Entregamos en todos los formatos necesarios: alta calidad para web y redes sociales, versiones adaptadas para distintas plataformas (Instagram, LinkedIn, YouTube) y el archivo fuente si se requiere.' },
 ]
 
 export default function Contacto() {
-  const { navigate } = useNavigation()
-
   return (
     <>
       <Helmet>
@@ -148,7 +139,7 @@ export default function Contacto() {
                     Reserva un espacio en nuestro calendario y conversamos sobre tu proyecto.
                   </p>
                   <a
-                    href="https://tidycal.com/grappi/"
+                    href="https://tidycal.com/grappi/reunion"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 text-sm"
@@ -157,22 +148,6 @@ export default function Contacto() {
                   </a>
                 </div>
 
-                {/* Services quick nav */}
-                <div className="card-dark">
-                  <h3 className="text-white font-bold mb-3">Nuestros servicios</h3>
-                  <div className="space-y-2">
-                    {SERVICES.map(s => (
-                      <button
-                        key={s.path}
-                        onClick={() => navigate(s.path)}
-                        className="w-full text-left flex items-center justify-between py-2 px-3 rounded-lg hover:bg-white/5 transition-colors group"
-                      >
-                        <span className="text-white/70 group-hover:text-white text-sm transition-colors">{s.label}</span>
-                        <ArrowRight size={14} className="text-white/30 group-hover:text-orange-400 transition-colors" />
-                      </button>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -180,11 +155,11 @@ export default function Contacto() {
 
         {/* FAQs */}
         <section className="section-light py-20">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8">
               Preguntas frecuentes
             </h2>
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {FAQS.map(faq => (
                 <FAQItem key={faq.question} question={faq.question} answer={faq.answer} dark={false} />
               ))}

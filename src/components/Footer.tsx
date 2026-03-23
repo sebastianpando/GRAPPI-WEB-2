@@ -15,12 +15,14 @@ export default function Footer() {
             <p className="text-white/60 text-sm leading-relaxed mb-4">
               Productora audiovisual en Santiago especializada en videos corporativos, animación 2D/3D (motion graphics) y publicidad audiovisual para empresas.
             </p>
-            <Link
-              href="/contacto"
+            <a
+              href="https://tidycal.com/grappi/reunion"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-orange-400 hover:text-orange-300 text-sm font-medium transition-colors duration-200"
             >
               Hablemos de tu proyecto →
-            </Link>
+            </a>
           </div>
 
           {/* Contact */}
@@ -55,11 +57,6 @@ export default function Footer() {
             <p className="text-white/50 text-xs mb-4">
               Síguenos para ver nuestros últimos proyectos y behind the scenes.
             </p>
-            <div className="flex flex-col gap-1 text-sm">
-              <Link href="/videos-corporativos" className="text-white/60 hover:text-white transition-colors duration-200">Videos Corporativos</Link>
-              <Link href="/videos-animados" className="text-white/60 hover:text-white transition-colors duration-200">Videos Animados</Link>
-              <Link href="/clientes" className="text-white/60 hover:text-white transition-colors duration-200">Clientes</Link>
-            </div>
           </div>
         </div>
 

@@ -1,46 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.grappi.cl/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grappi.cl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.grappi.cl/"/>
+    <image:image>
+      <image:loc>https://www.grappi.cl/hero-home-new.png</image:loc>
+      <image:title>Grappi Multimedia — Productora Audiovisual Santiago Chile</image:title>
+      <image:caption>Productora audiovisual líder en Santiago de Chile. Videos corporativos, animación 2D/3D y motion graphics.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.grappi.cl/banner-marcas.png</image:loc>
+      <image:title>Clientes de Grappi Multimedia — Productora Audiovisual Chile</image:title>
+      <image:caption>Más de 85 empresas confían en Grappi para su producción audiovisual en Chile.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.grappi.cl/videos-corporativos</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/videos-corporativos"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grappi.cl/videos-corporativos"/>
+    <image:image>
+      <image:loc>https://www.grappi.cl/hero-corporate-new.png</image:loc>
+      <image:title>Videos Corporativos en Santiago Chile — Grappi Multimedia</image:title>
+      <image:caption>Producción profesional de videos corporativos para empresas en Santiago, Chile.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.grappi.cl/videos-animados</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/videos-animados"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grappi.cl/videos-animados"/>
+    <image:image>
+      <image:loc>https://www.grappi.cl/hero-animated-new.png</image:loc>
+      <image:title>Videos Animados 2D y 3D en Chile — Grappi Multimedia</image:title>
+      <image:caption>Animación 2D, 3D y motion graphics para empresas en Chile.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.grappi.cl/videos</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/videos"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grappi.cl/videos"/>
+    <image:image>
+      <image:loc>https://www.grappi.cl/bg-videos-hero-new.png</image:loc>
+      <image:title>Portafolio Audiovisual — Grappi Multimedia Chile</image:title>
+      <image:caption>Más de 500 proyectos de producción audiovisual para empresas en Chile.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.grappi.cl/clientes</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/clientes"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grappi.cl/clientes"/>
+    <image:image>
+      <image:loc>https://www.grappi.cl/hero-clientes-chilean.png</image:loc>
+      <image:title>Clientes y Testimonios — Grappi Multimedia Chile</image:title>
+      <image:caption>Más de 200 empresas confían en Grappi para su producción audiovisual.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.grappi.cl/contacto</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://www.grappi.cl/contacto"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grappi.cl/contacto"/>
+    <image:image>
+      <image:loc>https://www.grappi.cl/bg-contacto-new.png</image:loc>
+      <image:title>Contacto Productora Audiovisual Santiago — Grappi Multimedia</image:title>
+      <image:caption>Contacta a Grappi Multimedia en Vitacura, Santiago, Chile. Cotiza tu video corporativo.</image:caption>
+    </image:image>
   </url>
 </urlset>
